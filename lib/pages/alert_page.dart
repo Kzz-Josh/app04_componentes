@@ -40,11 +40,35 @@ class AlertPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
+              child: Text('Alert1'),
               onPressed: () {
-                showMyAlert(context);
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog();
+                    });
               },
-              child: Text("Alert"),
-            )
+            ),
+            ElevatedButton(
+              child: Text('Alert2'),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog();
+                    });
+              },
+            ),
+            ElevatedButton(
+              child: Text('Alert3'),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog();
+                    });
+              },
+            ),
           ],
         ),
       ),
