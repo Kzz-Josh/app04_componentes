@@ -1,32 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AlertPage extends StatelessWidget {
-  showMyAlert(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("AlertDialog example!!!"),
-          backgroundColor: Colors.white,
-          content: Text(
-              "Este es un ejemplo del AlertDialog. esto es un texto de prueba"),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text("Cancelar"),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text("Aceptar"),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +19,7 @@ class AlertPage extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return AlertDialog();
+                      return Alert1('alert');
                     });
               },
             ),
@@ -72,6 +46,32 @@ class AlertPage extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Alert1 extends StatelessWidget {
+  final title;
+  Alert1(this.title);
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text("AlertDialog example!!!"),
+      backgroundColor: Colors.white,
+      content: Text(
+          "Este es un ejemplo del AlertDialog. esto es un texto de prueba"),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text("Cancelar"),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Text("Aceptar"),
+        ),
+      ],
     );
   }
 }
