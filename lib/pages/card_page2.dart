@@ -1,4 +1,3 @@
-import 'dart:js_util';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -113,6 +112,7 @@ class _CardPage2State extends State<CardPage2> {
               ],
             ),
           ),
+          //Card3
           Container(
             margin: const EdgeInsets.all(10.0),
             padding: const EdgeInsets.all(10.0),
