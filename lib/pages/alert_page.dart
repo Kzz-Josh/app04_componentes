@@ -29,7 +29,7 @@ class AlertPage extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return AlertDialog();
+                      return Alert2('Alert2');
                     });
               },
             ),
@@ -39,7 +39,7 @@ class AlertPage extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (BuildContext context) {
-                      return AlertDialog();
+                      return Alert3();
                     });
               },
             ),
@@ -76,11 +76,83 @@ class Alert1 extends StatelessWidget {
   }
 }
 
-class Al extends StatelessWidget {
-  const Al({super.key});
+class Alert2 extends StatelessWidget {
+  final title;
+  Alert2(this.title);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      child: Container(
+        height: 200,
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                alignment: Alignment.centerLeft,
+                color: Colors.white70,
+                child: Icon(
+                  Icons.account_balance_wallet,
+                  size: 60,
+                ),
+              ),
+            ),
+            Expanded(
+                child: Container(
+              color: Colors.white,
+              child: SizedBox.expand(
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Alert3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+      child: Container(
+        height: 200,
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                alignment: Alignment.centerRight,
+                color: Colors.white70,
+                child: Icon(
+                  Icons.account_balance_wallet,
+                  size: 60,
+                ),
+              ),
+            ),
+            Expanded(
+                child: Container(
+              color: Colors.white,
+              child: SizedBox.expand(
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                ),
+              ),
+            ))
+          ],
+        ),
+      ),
+    );
   }
 }
